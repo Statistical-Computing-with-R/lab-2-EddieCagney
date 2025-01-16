@@ -1,10 +1,11 @@
 ---
 title: "Lab 2: Exploring Rodents with `ggplot2`"
-author: "Your name here!"
+author: "Eddie Cagney"
 format: html
 editor: source
 embed-resources: true
 code-tools: true
+
 ---
 
 # Part 1: GitHub Workflow
@@ -124,9 +125,9 @@ for different types of plots:
 #| eval: false
 #| label: ggplot-template-code
 
-ggplot(data = <DATA>,
-       mapping = aes(<VARIABLE MAPPINGS>)) +
-  <GEOM_FUNCTION>()
+#ggplot(data = <DATA>,
+ #      mapping = aes(<VARIABLE MAPPINGS>)) +
+ # <GEOM_FUNCTION>()
 ```
 
 Let's get started!
@@ -246,11 +247,11 @@ We're going to use the `aov()` function to carry out an ANOVA.
 might want to look up the help documentation for `aov()`.
 
 ```{r}
-#| label: anova
+##| label: anova
 
-species_mod <- aov()
+#species_mod <- aov()
 
-summary(species_mod)
+#summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
