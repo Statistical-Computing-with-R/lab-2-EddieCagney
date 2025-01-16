@@ -144,7 +144,10 @@ the $x$-axis) and `hindfoot_length` (on the $y$-axis).**
 #| label: scatterplot
 ggplot(data = surveys,
        mapping = aes(x = weight, y = hindfoot_length)) +
-  geom_point()
+  geom_point(alpha = 0.25) + 
+  facet_wrap(~species) +
+  labs(title = "Animal Diversity Plots", 
+       subtitle = "Hind foot Length (mm)", x = "Weight (g)", y = "")
 ```
 
 We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.
@@ -174,7 +177,12 @@ It takes a larger cognitive load to read text that is rotated. It is common prac
 
 ```{r}
 #| label: boxplot
-
+ggplot(data = surveys,
+       mapping = aes(x = weight)) +
+  geom_boxplot()+
+  facet_wrap(~species) +
+  labs(title = "Animal Diversity Plots", 
+       x = "Weight (g)")
 
 ```
 
