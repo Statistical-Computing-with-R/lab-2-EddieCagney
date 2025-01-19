@@ -232,7 +232,15 @@ Some people (and journals) prefer for boxplots to be stacked with a specific ori
 
 ```{r}
 #| label: rotated-boxplot
-
+ggplot(data = surveys,
+       mapping = aes(x = species, y = weight)) +
+  geom_boxplot(outlier.shape = NA)+ geom_jitter(width = 0.1, alpha=0.1, color = "orange3") + 
+  coord_flip() +
+  labs(title = "Animal Diversity Plots", 
+       x = "Species",
+       y = "Weight") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.y = element_text(angle = 45, hjust = 1))
 ```
 
 Notice how vertically stacked boxplots make the species labels more readable
@@ -263,15 +271,15 @@ We're going to use the `aov()` function to carry out an ANOVA.
 might want to look up the help documentation for `aov()`.
 
 ```{r}
-##| label: anova
+#| label: anova
 
-#species_mod <- aov()
+species_mod <- aov(weight ~ species, data = surveys)
 
-#summary(species_mod)
+summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
-
+With an F statistic of 19916 and a p-value less than 2e^-16, we have enough evidence that at least one of the rodent species has a different population mean weight.
 
 # Lab 2 Submission
 
