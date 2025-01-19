@@ -9,6 +9,9 @@ echo: true
 error: false
 code-fold: true
 message: false
+execute: 
+  warning: false
+  messages: false
 ---
 
 # Part 1: GitHub Workflow
